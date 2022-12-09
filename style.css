@@ -2,6 +2,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  display: grid;
 }
 
 h2 {
@@ -19,6 +20,8 @@ h3 {
 p {
   line-height: 1.5em;
   margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 section {
@@ -31,7 +34,17 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+}
+
+.about-img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.host-img {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* ---  Groups & Items --- */
@@ -48,27 +61,29 @@ main img {
 
 .item-double {
   flex: 2;
+  margin: 10px;
 }
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 30px 30px 0 20px;
   text-align: center;
 }
 
 .logo {
+  display: flex;
   font-family: "Pangolin", cursive;
-  font-size: 60px;
+  font-size: 64px;
   color: #fff;
-  text-align: center;
+  justify-content: center;
 }
+
 header nav ul {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  padding-bottom: 20px;
+  text-decoration: none;
 }
 
 header nav ul li {
@@ -77,8 +92,8 @@ header nav ul li {
 
 header nav ul li a {
   color: #fff;
-  text-decoration: none;
   padding: 0 20px 0 0;
+  text-decoration: none;
 }
 
 header nav ul li a:hover {
@@ -87,20 +102,18 @@ header nav ul li a:hover {
 }
 
 /* -------  Search Form ------- */
+
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 2px solid #ff385c;
   padding: 10px;
 }
 
 form label {
   font-weight: bold;
-}
-
-form select,
-form input {
-  margin-bottom: 20px;
-  width: 180px;
-  box-sizing: border-box;
+  padding-right: 10px;
 }
 
 form button {
@@ -110,6 +123,11 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* -------  Footer ------- */
@@ -124,78 +142,88 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
-@media all and (min-width: 800px) {
 
+/* ------- * --------- * ------- */
+
+/* -------  Media Query ------- */
+
+/* ------- * --------- * ------- */
+
+
+/* -------  General Styles ------- */
+
+@media all and (min-width: 480px) {
   header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 20px;
-    align-items: row;
+    padding: 15px;
   }
   
+  .logo {
+    font-size: 48px;
+    padding-left: 5px;
+  }
+
+  /* -------  Search Form ------- */
+
   form {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
   }
 
   form div {
     display: flex;
     flex-direction: column;
-    /* padding-right: 24px; */
   }
 
-  form div input {
-    width: 90%;
+  form label {
+    padding-bottom: 15px;
+    font-weight: bold;
   }
+
+  .form-input {
+    padding-right: 15px;
+    justify-content: center;
+  }
+
+  button {
+    justify-content: center;
+  }
+
+  /* -------  Groups & Items------- */
 
   .group {
+    align-items: center;
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
+  }
+
+  .item button,
+  .item input,
+  .item label,
+  .item select {
+    display: flex;
+    width: 100%;
+  }
+
+  .item {
+    flex: 1;
+    margin: 15px;
   }
 
   .item-double {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 2;
+    margin: 15px;
   }
 
-}
-
-@media all and (min-width: 480px) {
-  body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  h2 {
-    font-size: 26px;
-    font-weight: 400;
-    margin: 0 10px 10px 10px;
-    text-align: center;
-  }
-  
-  h3 {
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
   p {
-    line-height: 1.5em;
-    margin: 0;
-  }
-  
-  section {
-    padding: 20px;
-  }
-  
-  section.alternate-background {
-    background-color: #00a699;
-    color: #fff;
-  }
-  
-  main img {
-    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
